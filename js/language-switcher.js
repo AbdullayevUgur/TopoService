@@ -13,7 +13,7 @@ class LanguageSwitcher {
 
     async loadTranslations() {
         try {
-            const response = await fetch('translations.json');
+            const response = await fetch('translations/translations.json');
             this.translations = await response.json();
         } catch (error) {
             console.error('Error loading translations:', error);

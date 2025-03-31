@@ -25,11 +25,10 @@
     position: relative;
 }
 
-/* Невидимая рамка для изображений */
 .image-frame {
     width: 100%;
     height: 0;
-    padding-bottom: 70%; /* Соотношение сторон рамки (можно регулировать) */
+    padding-bottom: 70%;
     position: relative;
     overflow: hidden;
 }
@@ -44,7 +43,6 @@
     border-radius: 6px;
 }
 
-/* Сдвиг изображений к краям */
 .edge-image {
     margin-left: -250px;
     margin-bottom: 100px;
@@ -97,6 +95,6 @@
     }
 
     .image-frame {
-        padding-bottom: 50%; /* Меньшее соотношение для мобильных */
+        padding-bottom: 50%;
     }
 }

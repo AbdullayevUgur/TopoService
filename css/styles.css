@@ -219,7 +219,7 @@
     gap: 64px;
     padding: 24px 167px;
     position: relative;
-    background-color: #201f53;
+    background-color: #f9f9f9;
     border-top-width: 1px;
     border-top-style: solid;
     border-color: var(--neutral-colors300);
@@ -260,7 +260,7 @@
     gap: 16px;
     position: relative;
     flex: 0 0 auto;
-    background-color: #201f53;
+    background-color: #f9f9f9;
 }
 
 .footer .social-media-icon {
@@ -333,7 +333,7 @@
 /* Общие стили для формы */
 /* Основные стили секции */
 .contact-section {
-    background-color: #f9f9f9;
+    background-color: #201f53;
     padding: 80px 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
