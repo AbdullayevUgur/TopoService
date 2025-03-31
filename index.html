@@ -11,66 +11,48 @@
     <link rel="stylesheet" href="css/services.css" />
     <link rel="stylesheet" href="css/team.css" />
     <link rel="stylesheet" href="css/faq.css" />
+    <link rel="alternate" hreflang="en" href="?lang=en">
+    <link rel="alternate" hreflang="ru" href="?lang=ru">
+    <link rel="alternate" hreflang="az" href="?lang=az">
   </head>
   <body>
     <div class="header">
-<!--      <div class="header-top">-->
-<!--        <div class="header-top-left">-->
-<!--          <div class="group">-->
-<!--&lt;!&ndash;            <div class="email">&ndash;&gt;-->
-<!--&lt;!&ndash;              <img class="img" src="img/gmail.svg" />&ndash;&gt;-->
-<!--&lt;!&ndash;              <input class="link" placeholder="contact@brixagency.com" type="email" />&ndash;&gt;-->
-<!--&lt;!&ndash;            </div>&ndash;&gt;-->
-<!--&lt;!&ndash;            <div class="phone-number">&ndash;&gt;-->
-<!--&lt;!&ndash;              <img class="img" src="img/phone.svg" />&ndash;&gt;-->
-<!--&lt;!&ndash;              <div class="link-item-wrapper"><div class="link-item">(050) 975 - 74 - 04</div></div>&ndash;&gt;-->
-<!--&lt;!&ndash;            </div>&ndash;&gt;-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        <div class="header-top-right">-->
-<!--&lt;!&ndash;          <div class="social-media-wrapper">&ndash;&gt;-->
-<!--&lt;!&ndash;            <img class="social-media-icon" src="img/facebook.svg" />&ndash;&gt;-->
-<!--&lt;!&ndash;            <div class="instagram-wrapper"><img class="instagram" src="img/instagram.svg" /></div>&ndash;&gt;-->
-<!--&lt;!&ndash;            <img class="social-media-icon" src="img/linkedin.svg" />&ndash;&gt;-->
-<!--&lt;!&ndash;            <img class="social-media-icon" src="img/youtube.svg" />&ndash;&gt;-->
-<!--&lt;!&ndash;          </div>&ndash;&gt;-->
-<!--        </div>-->
-<!--      </div>-->
       <div class="header-bottom">
         <img class="logo-full-dark" src="img/logo.jpeg" />
-        <div class="header-right">
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#team">Team</a></li>
-                    <li><a href="#contact-us">Contact us</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                </ul>
-            </nav>
-<!--           <div class="primary-button"><div class="button-text">Get in touch</div></div>-->
-        </div>
+          <div class="header-right">
+              <nav>
+                  <ul>
+                      <li><a href="#home">Home</a></li>
+                      <li><a href="#about">About</a></li>
+                      <li><a href="#services">Services</a></li>
+                      <li><a href="#team">Team</a></li>
+                      <li><a href="#contact-us">Contact us</a></li>
+                      <li><a href="#faq">FAQ</a></li>
+                  </ul>
+              </nav>
+
+              <div class="language-switcher">
+                  <button class="language-current" aria-expanded="false">
+                      <span>AZ</span>
+                      <svg class="language-arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                          <path d="M1 1L6 6L11 1" stroke="#201f53" stroke-width="2" stroke-linecap="round"/>
+                      </svg>
+                  </button>
+                  <ul class="language-dropdown">
+                      <li><button class="language-option" data-lang="az">Azərbaycanca (AZ)</button></li>
+                      <li><button class="language-option" data-lang="ru">Русский (RU)</button></li>
+                      <li><button class="language-option" data-lang="en">English (EN)</button></li>
+                  </ul>
+              </div>
+          </div>
       </div>
     </div>
 
     <section id="home">
     <div class="hero">
-<!--        <div class="grid">-->
-<!--            <p class="heading">Discover the key to grow your business</p>-->
-<!--            <div class="spacer"></div>-->
-<!--            <p class="paragraph">-->
-<!--                Lorem ipsum dolor sit amet consectetur adipiscing eli mattis sit phasellus mollis sit aliquam sit nullam neque-->
-<!--                ultrices.-->
-<!--            </p>-->
+
             <div class="text-wrapper"><div class="text">32</div></div>
-<!--            <div class="button-row">-->
-<!--                <div class="primary-button">-->
-<!--                    <div class="button-text">Get in touch</div>-->
-<!--                    <img class="line-rounded-arrow" src="img/arrow-rigth.svg" />-->
-<!--                </div>-->
-<!--                <button class="secondary-button"><button class="div">Learn more</button></button>-->
-<!--            </div>-->
+
         </div>
     </div>
     </section>
@@ -323,6 +305,26 @@
                 <p>Hal-hazırda əsasən Azərbaycan daxilində topoqrafik ölçmə və geodeziya xidmətləri təklif edirik.</p>
             </div>
         </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Topoqrafik ölçmələr üçün icazə və ya sənəd lazımdırmı?</span>
+                <button class="faq-toggle" aria-expanded="false"></button>
+            </div>
+            <div class="faq-answer">
+                <p>Bəzi hallarda ölçmələrin aparılması üçün rəsmi icazə və müvafiq sənədlər tələb oluna bilər. Bununla bağlı hüquqi məsləhət də təqdim edirik.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Ölçmələrin dəqiqliyi nə qədərdir?</span>
+                <button class="faq-toggle" aria-expanded="false"></button>
+            </div>
+            <div class="faq-answer">
+                <p>İstifadə etdiyimiz texnologiyadan asılı olaraq dəqiqlik millimetr səviyyəsinə qədər çata bilər.</p>
+            </div>
+        </div>
     </section>
 
     <div class="footer">
@@ -341,5 +343,6 @@
         </div>
     </div>
     <script src="js/index.js"></script>
+    <script src="js/language-switcher.js" defer></script>
   </body>
 </html>

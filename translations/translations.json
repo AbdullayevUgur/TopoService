@@ -1,0 +1,24 @@
+{
+  "en": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "team": "Our Team",
+    "contact-us": "Contact Us",
+    "faq": "FAQ"
+  },
+  "ru": {
+    "home": "Главная",
+    "about": "О нас",
+    "services": "Услуги",
+    "team": "Наша команда",
+    "contact": "Контакты"
+  },
+  "az": {
+    "home": "Əsas Səhifə",
+    "about": "Haqqımızda",
+    "services": "Xidmətlər",
+    "team": "Komandamız",
+    "contact": "Əlaqə"
+  }
+}
