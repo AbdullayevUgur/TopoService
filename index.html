@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8" />
-      <title>TopoService</title>
+    <title>TopoService</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="css/globals.css" />
     <link rel="stylesheet" href="css/styleguide.css" />
     <link rel="stylesheet" href="css/styles.css" />
@@ -15,61 +16,123 @@
     <link rel="alternate" hreflang="az" href="?lang=az">
     <link rel="alternate" hreflang="en" href="?lang=en">
     <link rel="alternate" hreflang="ru" href="?lang=ru">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  </head>
-  <body>
-  <div class="header">
-      <div class="header-bottom">
-          <img class="logo-full-dark" src="img/logo.jpeg" />
-          <div class="header-right">
-              <nav>
-                  <ul>
-                      <li><a href="#home" data-translate="home">Home</a></li>
-                      <li><a href="#about" data-translate="about">About</a></li>
-                      <li><a href="#services" data-translate="services">Services</a></li>
-                      <li><a href="#team" data-translate="team">Team</a></li>
-                      <li><a href="#contact-us" data-translate="contact_us">Contact us</a></li>
-                      <li><a href="#faq" data-translate="faq">FAQ</a></li>
-                  </ul>
-              </nav>
+    <style>
+        /* Mobile-specific additions */
+        @media (max-width: 768px) {
+            .header-bottom {
+                flex-direction: column;
+                padding: 15px;
+            }
 
-              <div class="language-switcher">
-                  <button class="language-current" aria-expanded="false" data-translate="language_switcher">
-                      <span>AZ</span>
-                      <svg class="language-arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
-                          <path d="M1 1L6 6L11 1" stroke="#201f53" stroke-width="2" stroke-linecap="round"/>
-                      </svg>
-                  </button>
-                  <ul class="language-dropdown">
-                      <li><button class="language-option" data-lang="az" data-translate="az_language">Azərbaycanca (AZ)</button></li>
-                      <li><button class="language-option" data-lang="ru" data-translate="ru_language">Русский (RU)</button></li>
-                      <li><button class="language-option" data-lang="en" data-translate="en_language">English (EN)</button></li>
-                  </ul>
-              </div>
-          </div>
-      </div>
-  </div>
+            .header-right {
+                width: 100%;
+                margin-top: 15px;
+                flex-direction: column;
+            }
 
-  <section id="home">
-      <div class="hero">
-          <div class="text-wrapper"><div class="text" data-translate="hero_text">32</div></div>
-      </div>
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
 
-  </section>
+            .language-switcher {
+                margin-top: 15px;
+                align-self: center;
+            }
 
-  <section id="about">
-      <div class="call-to-action">
-          <div class="image-replace"><img class="background" src="img/sec2.jpeg" /></div>
-          <div class="grid">
-              <div class="heading" data-translate="about_heading">Haqqımızda</div>
-              <div class="spacer"><div class="text" data-translate="about_text">24</div></div>
-              <p class="paragraph" data-translate="about_paragraph">
-                  Biz peşəkar topoqrafiya və geodeziya xidmətləri təqdim edirik. Mütəxəssis komandamız ən son texnologiyalardan istifadə edərək ərazi ölçmələri, xəritələşdirmə və analiz işlərini yüksək dəqiqliklə icra edir. Aşağıda xidmətlərimiz haqqında ətraflı məlumat ala bilərsiniz.
-              </p>
-              <div class="text-wrapper"><div class="div" data-translate="about_div">32</div></div>
-          </div>
-      </div>
-  </section>
+            .service-section,
+            .service-section.reverse {
+                flex-direction: column;
+            }
+
+            .service-image,
+            .service-text {
+                width: 100%;
+            }
+
+            .edge-image,
+            .service-section.reverse .edge-image {
+                margin: 0;
+            }
+
+            .mobile-section {
+                padding: 40px 0;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .header-right {
+                display: none;
+            }
+
+            .header-right.active {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <div class="header-bottom container">
+        <img class="logo-full-dark" src="img/logo.jpeg" alt="TopoService Logo">
+
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="header-right">
+            <nav>
+                <ul>
+                    <li><a href="#home" data-translate="home">Home</a></li>
+                    <li><a href="#about" data-translate="about">About</a></li>
+                    <li><a href="#services" data-translate="services">Services</a></li>
+                    <li><a href="#team" data-translate="team">Team</a></li>
+                    <li><a href="#contact-us" data-translate="contact_us">Contact us</a></li>
+                    <li><a href="#faq" data-translate="faq">FAQ</a></li>
+                </ul>
+            </nav>
+
+            <div class="language-switcher">
+                <button class="language-current" aria-expanded="false" data-translate="language_switcher">
+                    <span>AZ</span>
+                    <svg class="language-arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                        <path d="M1 1L6 6L11 1" stroke="#201f53" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <ul class="language-dropdown">
+                    <li><button class="language-option" data-lang="az" data-translate="az_language">Azərbaycanca (AZ)</button></li>
+                    <li><button class="language-option" data-lang="ru" data-translate="ru_language">Русский (RU)</button></li>
+                    <li><button class="language-option" data-lang="en" data-translate="en_language">English (EN)</button></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Все ваши секции остаются без изменений -->
+<section id="home">
+    <div class="hero">
+        <div class="text-wrapper"><div class="text" data-translate="hero_text">32</div></div>
+    </div>
+</section>
+
+<section id="about">
+    <div class="call-to-action">
+        <div class="image-replace"><img class="background" src="img/sec2.jpeg" /></div>
+        <div class="grid">
+            <div class="heading" data-translate="about_heading">Haqqımızda</div>
+            <div class="spacer"><div class="text" data-translate="about_text">24</div></div>
+            <p class="paragraph" data-translate="about_paragraph">
+                Biz peşəkar topoqrafiya və geodeziya xidmətləri təqdim edirik. Mütəxəssis komandamız ən son texnologiyalardan istifadə edərək ərazi ölçmələri, xəritələşdirmə və analiz işlərini yüksək dəqiqliklə icra edir. Aşağıda xidmətlərimiz haqqında ətraflı məlumat ala bilərsiniz.
+            </p>
+            <div class="text-wrapper"><div class="div" data-translate="about_div">32</div></div>
+        </div>
+    </div>
+</section>
 
   <section id="services">
       <div class="services-container">
