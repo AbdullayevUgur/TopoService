@@ -1,11 +1,9 @@
-/* Базовые стили */
 .mobile-container {
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
 }
 
-/* Хедер */
 .mobile-header {
     position: fixed;
     top: 0;
@@ -42,7 +40,6 @@
     transition: all 0.3s;
 }
 
-/* Мобильное меню */
 .mobile-nav {
     display: none;
     background: #f9f9f9;
@@ -66,7 +63,6 @@
     border-bottom: 1px solid #eee;
 }
 
-/* Секции */
 .mobile-section {
     padding: 80px 15px 40px;
     width: 100%;
@@ -85,7 +81,6 @@
     margin-bottom: 15px;
 }
 
-/* Команда */
 .mobile-team {
     display: grid;
     grid-template-columns: 1fr;
@@ -99,7 +94,6 @@
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
 
-/* Футер */
 .mobile-footer {
     background: #201f53;
     color: white;
@@ -119,7 +113,6 @@
     margin: 20px 0;
 }
 
-/* Медиазапросы */
 @media (min-width: 769px) {
     .mobile-header {
         position: static;
