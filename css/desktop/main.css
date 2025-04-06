@@ -320,7 +320,7 @@ nav ul li a {
     gap: 60px;
     padding: 80px 167px;
     position: relative;
-    background-image: url(../img/hero-v9.jpeg);
+    background-image: url(../../img/hero-v9.jpeg);
     background-size: cover;
     background-position: 50% 50%;
 }
