@@ -1,5 +1,9 @@
-html {
+html, body {
     scroll-behavior: smooth;
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 .header {
@@ -35,14 +39,7 @@ html {
     height: 18px;
 }
 
-.header .email {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
+
 
 .header .img {
     position: relative;
@@ -71,14 +68,7 @@ html {
     padding: 0;
 }
 
-.header .phone-number {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    position: absolute;
-    top: 0;
-    left: 247px;
-}
+
 
 .header .link-item-wrapper {
     display: inline-flex;
@@ -181,7 +171,7 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 24px; /* Расстояние между кнопками */
+    gap: 24px;
 }
 
 

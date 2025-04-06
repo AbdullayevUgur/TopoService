@@ -1,215 +1,13 @@
-.cards {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: flex-start;
-    position: relative;
-}
-
-.cards .card {
-    display: inline-flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 10px;
-    padding: 10px;
-    position: relative;
-    flex: 0 0 auto;
-    margin-top: -1.00px;
-    margin-left: -1.00px;
-    margin-right: -1.00px;
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
-    border-color: #6c748f;
-}
-
-.cards .number {
-    display: inline-flex;
-    align-items: flex-start;
-    justify-content: flex-end;
-    gap: 10px;
-    padding: 0px 3px 0px 0px;
-    position: relative;
-    flex: 0 0 auto;
-}
-
-.cards .text-wrapper {
-    position: relative;
-    width: fit-content;
-    margin-top: -1.00px;
-    font-family: var(--display-4-semi-bold-font-family);
-    font-weight: var(--display-4-semi-bold-font-weight);
-    color: #201753;
-    font-size: var(--display-4-semi-bold-font-size);
-    text-align: right;
-    letter-spacing: var(--display-4-semi-bold-letter-spacing);
-    line-height: var(--display-4-semi-bold-line-height);
-    white-space: nowrap;
-    font-style: var(--display-4-semi-bold-font-style);
-}
-
-.cards .accordion-card {
-    flex-direction: column;
-    width: 584px;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 20px 0px;
-    background-color: #f9f2e0;
-    display: flex;
-    position: relative;
-}
-
-.cards .accordion-content {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 11px;
-    align-self: stretch;
+.container {
+    max-width: 100%;
     width: 100%;
-    flex: 0 0 auto;
-    display: flex;
-    position: relative;
+    padding: 0 15px;
+    box-sizing: border-box; /* Важно! */
 }
 
-.cards .accordion-top {
-    align-items: center;
-    justify-content: space-between;
-    align-self: stretch;
-    width: 100%;
-    flex: 0 0 auto;
-    display: flex;
-    position: relative;
-}
-
-.cards .card-title {
-    position: relative;
-    width: fit-content;
-    font-family: var(--display-3-semi-bold-font-family);
-    font-weight: var(--display-3-semi-bold-font-weight);
-    color: #201753;
-    font-size: var(--display-3-semi-bold-font-size);
-    text-align: right;
-    letter-spacing: var(--display-3-semi-bold-letter-spacing);
-    line-height: var(--display-3-semi-bold-line-height);
-    white-space: nowrap;
-    font-style: var(--display-3-semi-bold-font-style);
-}
-
-
-
-.cards .div {
-    display: inline-flex;
-    align-items: flex-start;
-    justify-content: flex-end;
-    gap: 10px;
-    padding: 10px;
-    position: relative;
-    flex: 0 0 auto;
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
-    border-color: #6c748f;
-}
-
-.cards .div-wrapper {
-    display: inline-flex;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 15px 0px 18px;
-    position: relative;
-    flex: 0 0 auto;
-}
-
-.cards .accordion-content-wrapper {
-    display: flex;
-    flex-direction: column;
-    width: 584px;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 14px 0px 16px;
-    position: relative;
-    background-color: #f9f2e0;
-}
-
-.cards .accordion-content-2 {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-    position: relative;
-    align-self: stretch;
-    width: 100%;
-    flex: 0 0 auto;
-}
-
-.cards .p {
-    position: relative;
-    width: fit-content;
-    font-family: var(--display-3-semi-bold-font-family);
-    font-weight: var(--display-3-semi-bold-font-weight);
-    color: #201f53;
-    font-size: var(--display-3-semi-bold-font-size);
-    letter-spacing: var(--display-3-semi-bold-letter-spacing);
-    line-height: var(--display-3-semi-bold-line-height);
-    white-space: nowrap;
-    font-style: var(--display-3-semi-bold-font-style);
-}
-
-.cards .line-rounded-close {
-    position: relative;
-    width: 14px;
-    height: 14px;
-}
-
-.cards .accordion-bottom {
-    align-items: flex-start;
-    padding: 0px 0px 14px;
-    align-self: stretch;
-    width: 100%;
-    flex: 0 0 auto;
-    display: flex;
-    position: relative;
-}
-
-.cards .paragraph {
-    position: relative;
-    width: 534px;
-    margin-top: -1.00px;
-    font-family: var(--paragraph-default-regular-font-family);
-    font-weight: var(--paragraph-default-regular-font-weight);
-    color: #201153;
-    font-size: var(--paragraph-default-regular-font-size);
-    letter-spacing: var(--paragraph-default-regular-letter-spacing);
-    line-height: var(--paragraph-default-regular-line-height);
-    font-style: var(--paragraph-default-regular-font-style);
-}
-
-.cards .card-2 {
-    display: inline-flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 10px;
-    padding: 10px;
-    position: relative;
-    flex: 0 0 auto;
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
-    border-color: #6c748f;
-}
-
-.cards .div-wrapper-2 {
-    display: inline-flex;
-    align-items: flex-start;
-    justify-content: flex-end;
-    gap: 10px;
-    position: relative;
-    flex: 0 0 auto;
-}
-
-.cards .card-3 {
-    display: inline-flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 10px;
-    padding: 10px;
-    position: relative;
-    flex: 0 0 auto;
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
 }
 
 .footer {
@@ -285,40 +83,35 @@
     left: 6px;
 }
 
-
-/* Основные стили для аккордеона */
 .accordion-bottom {
-    display: none; /* Скрываем контент по умолчанию */
+    display: none;
     padding-top: 10px;
 }
 
 .accordion-bottom.open {
-    display: block; /* Показываем контент при добавлении класса .open */
+    display: block;
 }
 
-/* Стили для кнопки */
 .toggle-btn {
     cursor: pointer;
     background: none;
     border: none;
     font-size: 24px;
     transition: transform 0.3s ease;
-    margin-left: auto; /* Размещаем кнопку справа */
+    margin-left: auto;
 }
 
 .toggle-btn.rotate {
-    transform: rotate(45deg); /* Поворачиваем кнопку на 45 градусов */
+    transform: rotate(45deg);
 }
 
-/* Убираем рамки у карточек */
 .card {
     padding: 10px;
     margin-bottom: 10px;
-    background-color: #f9f2e0; /* Легкий фон для карточки */
+    background-color: #f9f2e0;
     border-radius: 0px;
 }
 
-/* Стили для заголовка карточки */
 .accordion-top {
     display: flex;
     justify-content: space-between;
@@ -330,8 +123,6 @@
     margin: 0;
 }
 
-/* Общие стили для формы */
-/* Основные стили секции */
 .contact-section {
     background-color: #201f53;
     padding: 80px 20px;
@@ -418,7 +209,6 @@
     background: white;
 }
 
-/* Стили кнопки */
 .submit-btn {
     display: inline-flex;
     align-items: center;
@@ -454,13 +244,11 @@
     transform: translateX(5px);
 }
 
-/* Анимация при фокусе */
 @keyframes inputHighlighter {
     from { width: 0; }
     to { width: 100%; }
 }
 
-/* Адаптивность */
 @media (max-width: 768px) {
     .contact-container {
         padding: 30px 20px;
