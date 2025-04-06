@@ -87,3 +87,16 @@ document.addEventListener('DOMContentLoaded', function() {
         el.style.minHeight = '44px';
     });
 });
+
+if (window.innerWidth <= 768) {
+    document.addEventListener('DOMContentLoaded', function() {
+        // Инициализация мобильного меню
+        const hamburger = document.querySelector('.mobile-hamburger');
+        const mobileMenu = document.querySelector('.mobile-nav');
+
+        hamburger.addEventListener('click', function() {
+            this.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+    });
+}
