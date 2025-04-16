@@ -1,102 +1,136 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Мобильное меню
-    const hamburger = document.querySelector('.hamburger');
-    const headerRight = document.querySelector('.header-right');
 
-    if (hamburger && headerRight) {
-        hamburger.addEventListener('click', function() {
-            this.classList.toggle('active');
-            headerRight.classList.toggle('active');
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const mobileNav = document.querySelector('.mobile-nav');
+    const mobileMenuLines = document.querySelectorAll('.mobile-menu-line');
 
-            // Блокировка скролла при открытом меню
-            if (headerRight.classList.contains('active')) {
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style.overflow = '';
-            }
+    if (mobileMenuToggle && mobileNav) {
+        mobileMenuToggle.addEventListener('click', function() {
+            // Переключение видимости меню
+            mobileNav.classList.toggle('active');
+
+            // Анимация гамбургера в "крестик"
+            mobileMenuLines.forEach((line, index) => {
+                if (index === 0) line.style.transform = mobileNav.classList.contains('active') ? 'rotate(45deg) translate(5px, 5px)' : '';
+                if (index === 1) line.style.opacity = mobileNav.classList.contains('active') ? '0' : '1';
+                if (index === 2) line.style.transform = mobileNav.classList.contains('active') ? 'rotate(-45deg) translate(5px, -5px)' : '';
+            });
         });
     }
 
-    // Закрытие меню при клике на ссылку
-    document.querySelectorAll('nav a').forEach(link => {
-        link.addEventListener('click', function() {
-            if (hamburger && headerRight) {
-                hamburger.classList.remove('active');
-                headerRight.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        });
-    });
+    const mobileLanguageCurrent = document.querySelector('.mobile-language-current');
+    const mobileLanguageDropdown = document.querySelector('.mobile-language-dropdown');
 
-    // Переключатель языка
-    const languageSwitcher = document.querySelector('.language-switcher');
-    const languageCurrent = document.querySelector('.language-current');
-    const languageOptions = document.querySelectorAll('.language-option');
-
-    if (languageCurrent) {
-        languageCurrent.addEventListener('click', function(e) {
+    if (mobileLanguageCurrent && mobileLanguageDropdown) {
+        mobileLanguageCurrent.addEventListener('click', function(e) {
             e.stopPropagation();
-            languageSwitcher.classList.toggle('active');
+            this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'false' ? 'true' : 'false');
+            mobileLanguageDropdown.classList.toggle('open');
+        });
+
+        // Закрытие при клике вне элемента
+        document.addEventListener('click', function() {
+            mobileLanguageDropdown.classList.remove('open');
+            mobileLanguageCurrent.setAttribute('aria-expanded', 'false');
         });
     }
 
-    languageOptions.forEach(option => {
-        option.addEventListener('click', function(e) {
+    // =============================================
+    // FAQ-аккордеон (мобильная версия)
+    // =============================================
+    const mobileFaqToggles = document.querySelectorAll('.mobile-faq-toggle');
+
+    mobileFaqToggles.forEach(toggle => {
+        toggle.addEventListener('click', function() {
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !isExpanded);
+
+            // Анимация стрелки (если есть)
+            const arrow = this.querySelector('.mobile-faq-arrow');
+            if (arrow) {
+                arrow.style.transform = !isExpanded ? 'rotate(180deg)' : 'rotate(0)';
+            }
+
+            // Показ/скрытие ответа
+            const answer = this.closest('.mobile-faq-item').querySelector('.mobile-faq-answer');
+            answer.style.maxHeight = !isExpanded ? answer.scrollHeight + 'px' : '0';
+        });
+    });
+
+    // =============================================
+    // Обработчик формы (мобильная версия)
+    // =============================================
+    const mobileContactForm = document.querySelector('.mobile-contact-form');
+
+    if (mobileContactForm) {
+        mobileContactForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            const lang = this.getAttribute('data-lang');
-            document.querySelector('.language-current span').textContent = lang.toUpperCase();
-            languageSwitcher.classList.remove('active');
 
-            // Здесь будет логика смены языка
-            console.log('Language changed to:', lang);
-            // applyTranslations(lang); // Раскомментируйте при подключении системы переводов
-        });
-    });
+            // Валидация
+            const inputs = this.querySelectorAll('.mobile-form-input');
+            let isValid = true;
 
-    // Закрытие при клике вне элемента
-    document.addEventListener('click', function(e) {
-        if (languageSwitcher && !languageSwitcher.contains(e.target)) {
-            languageSwitcher.classList.remove('active');
-        }
-    });
+            inputs.forEach(input => {
+                if (!input.value.trim()) {
+                    input.classList.add('error');
+                    isValid = false;
+                } else {
+                    input.classList.remove('error');
+                }
+            });
 
-    // Фикс для iOS
-    if (/(iPad|iPhone|iPod)/g.test(navigator.userAgent)) {
-        const header = document.querySelector('.header');
-        if (header) {
-            header.style.position = 'sticky';
-        }
-    }
+            if (isValid) {
+                // Отправка данных (заглушка)
+                console.log('Форма отправлена:', {
+                    name: this.elements.name.value,
+                    email: this.elements.email.value,
+                    message: this.elements.message.value
+                });
 
-    // Адаптивные изображения
-    function handleImages() {
-        document.querySelectorAll('img').forEach(img => {
-            if (img.width > document.documentElement.clientWidth) {
-                img.style.maxWidth = '100%';
-                img.style.height = 'auto';
+                // Сброс формы
+                this.reset();
+                alert('Сообщение отправлено!');
             }
         });
     }
 
-    window.addEventListener('resize', handleImages);
-    handleImages();
+    // =============================================
+    // Плавная прокрутка для мобильных якорей
+    // =============================================
+    document.querySelectorAll('.mobile-menu-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
 
-    // Оптимизация для touch-устройств
-    document.querySelectorAll('button, a').forEach(el => {
-        el.style.minWidth = '44px';
-        el.style.minHeight = '44px';
-    });
-});
+            if (targetSection) {
+                // Закрываем меню после клика (если открыто)
+                if (mobileNav.classList.contains('active')) {
+                    mobileNav.classList.remove('active');
+                    mobileMenuLines.forEach(line => line.style = '');
+                }
 
-if (window.innerWidth <= 768) {
-    document.addEventListener('DOMContentLoaded', function() {
-        // Инициализация мобильного меню
-        const hamburger = document.querySelector('.mobile-hamburger');
-        const mobileMenu = document.querySelector('.mobile-nav');
-
-        hamburger.addEventListener('click', function() {
-            this.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
+                // Плавная прокрутка
+                window.scrollTo({
+                    top: targetSection.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
         });
     });
-}
+
+    function setViewportHeight() {
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+    setViewportHeight();
+    window.addEventListener('resize', setViewportHeight);
+
+    // Ленивая загрузка изображений
+    if ('loading' in HTMLImageElement.prototype) {
+        const mobileLazyImages = document.querySelectorAll('.mobile-service-img[data-src]');
+        mobileLazyImages.forEach(img => {
+            img.src = img.dataset.src;
+        });
+    }
+});
